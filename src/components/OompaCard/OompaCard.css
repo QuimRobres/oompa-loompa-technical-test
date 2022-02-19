@@ -1,0 +1,13 @@
+.oompa-container {
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+}
+
+.oompa-container img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+    
+}
