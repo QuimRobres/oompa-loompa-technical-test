@@ -9,7 +9,7 @@ export default function OompaInfoCard({ ...workerInfo }) {
       <div className="info-container">
         <h4>Oompa Loompa {workerInfo.first_name}</h4>
         <p>{workerInfo.gender}</p>
-        <p>{workerInfo.description}</p>
+        <p dangerouslySetInnerHTML={{ __html: workerInfo.description}} />
       </div>
     </div>
   );
