@@ -1,12 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import OompaList from './components/OompaList/OompaList';
+import Home from './pages/Home/Home';
+import OompaDetail from './pages/OompaDetail/OompaDetail';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <OompaList></OompaList>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/:id" element={<OompaDetail />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -5,32 +5,42 @@ import axios from "axios";
 
 export default function OompaList() {
   const [workers, setWorkers] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const mainUrl =
     "https://2q2woep105.execute-api.eu-west-1.amazonaws.com/napptilus/oompa-loompas?page=";
 
   useEffect(() => {
-    getData();
-  }, []);
-
-  function getData() {
     axios
-      .get(`${mainUrl}1`)
+      .get(`${mainUrl}${currentPage}`)
       .then((res) => {
         setWorkers(res.data.results);
+        setTotalPages(res.data.total);
       })
       .catch((err) => console.error(err));
-  }
+  }, [currentPage]);
+
 
   return (
     <div>
       <h1>Ommpa Loompas</h1>
-      <div class="list-container">
-        {workers &&
-          workers.map((worker, index) => {
-            return <OompaCard {...worker}></OompaCard>;
+      <div className="list-container">
+      <ul className="oompa-list">
+      {workers &&
+          workers.map((worker) => {
+            return (
+              <li key={worker.id}>
+              <OompaCard {...worker}></OompaCard>
+              </li>
+            ) 
           })}
+      </ul>
+        
       </div>
+      <button onClick={() => setCurrentPage(currentPage - 1)}>Previous Page</button>
+      <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
+     
     </div>
   );
 }
