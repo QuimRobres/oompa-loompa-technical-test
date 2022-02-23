@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import OompaCard from "../OompaCard/OompaCard";
 import "./OompaList.css";
 import axios from "axios";
+import searchIcon from "../../images/ic_search.png";
 
 export default function OompaList() {
   const [workers, setWorkers] = useState();
@@ -40,32 +41,44 @@ export default function OompaList() {
   };
 
   return (
-    <div>
-      <h1>Ommpa Loompas</h1>
-      <input
-        placeholder="Search Oompa..."
-        onChange={(e) => searchItems(e.target.value)}
-      />
-      <div className="list-container">
-        <ul className="oompa-list">
-          {searchInput.length > 1
-            ? filteredResults.map((worker) => {
-                return (
-                  <li key={worker.id}>
-                    <OompaCard {...worker}></OompaCard>
-                  </li>
-                );
-              })
-            : workers &&
-              workers.map((worker) => {
-                return (
-                  <li key={worker.id}>
-                    <OompaCard {...worker}></OompaCard>
-                  </li>
-                );
-              })}
-        </ul>
+    <div className="component-container">
+      <div className="main-container">
+        <div class="filter-container">
+          <div>
+            <input
+              placeholder="Search"
+              onChange={(e) => searchItems(e.target.value)}
+            />
+            <img src={searchIcon} alt="search-icon" width="15px" />
+          </div>
+        </div>
+
+        <div className="title-container">
+          <h1 class="title">Find your Ommpa Loompas</h1>
+          <h3 class="subtitle">There are more than 100k</h3>
+        </div>
+        <div className="list-container">
+          <ul className="oompa-list">
+            {searchInput.length > 1
+              ? filteredResults.map((worker) => {
+                  return (
+                    <li key={worker.id}>
+                      <OompaCard {...worker}></OompaCard>
+                    </li>
+                  );
+                })
+              : workers &&
+                workers.map((worker) => {
+                  return (
+                    <li key={worker.id}>
+                      <OompaCard {...worker}></OompaCard>
+                    </li>
+                  );
+                })}
+          </ul>
+        </div>
       </div>
+
       <button onClick={() => setCurrentPage(currentPage - 1)}>
         Previous Page
       </button>

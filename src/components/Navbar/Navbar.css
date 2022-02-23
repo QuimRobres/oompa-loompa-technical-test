@@ -1,0 +1,16 @@
+.navbar {
+  background-color: silver;
+}
+
+.navbar-content {
+    margin: auto;
+    width: 75%;
+
+  display: flex;
+  align-items: center;
+  
+}
+.navbar img {
+  max-width: 30px;
+  margin-right: 25px;
+}

@@ -12,12 +12,14 @@ export default function OompaCard({ ...worker }) {
         <img src={worker.image} alt="oompa-loompa"></img>
       </Link>
 
-      <h2>
+      <h4>
         {worker.first_name} {worker.last_name}
-      </h2>
+      </h4>
+      <div className="info-container">
       <p>{worker.gender}</p>
-      <p>{worker.profession}</p>
-      <p>{worker.index}</p>
+      <p><i>{worker.profession}</i></p>
+      </div>
+      
     </div>
   );
 }

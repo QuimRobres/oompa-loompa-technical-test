@@ -2,12 +2,26 @@
     max-width: 400px;
     height: auto;
     margin: auto;
+    margin-bottom: 30px;
 }
 
 .oompa-container img {
-    width: 250px;
-    height: 150px;
+    width: 400px;
+    height: 250px;
     object-fit: cover;
     overflow: hidden;
     
 }
+.info-container{
+    margin-top: -10px;
+}
+
+.oompa-container:hover h4{
+    color: #1a99f0;
+}
+
+p {
+    margin: 0px;
+    color: grey;
+}
+
