@@ -55,7 +55,7 @@ export default function OompaList() {
 
         <div className="title-container">
           <h1 class="title">Find your Ommpa Loompas</h1>
-          <h3 class="subtitle">There are more than 100k</h3>
+          <h2 class="subtitle">There are more than 100k</h2>
         </div>
         <div className="list-container">
           <ul className="oompa-list">
@@ -77,12 +77,24 @@ export default function OompaList() {
                 })}
           </ul>
         </div>
+        <div class="pages-container">
+          <p>
+            {currentPage}/{totalPages}
+          </p>
+        </div>
+        <div>
+          {currentPage !== 1 && (
+            <button onClick={() => setCurrentPage(currentPage - 1)}>
+              Previous Page
+            </button>
+          )}
+          {currentPage !== 20 && (
+            <button onClick={() => setCurrentPage(currentPage + 1)}>
+              Next Page
+            </button>
+          )}
+        </div>
       </div>
-
-      <button onClick={() => setCurrentPage(currentPage - 1)}>
-        Previous Page
-      </button>
-      <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
     </div>
   );
 }

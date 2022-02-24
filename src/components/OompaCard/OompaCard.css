@@ -19,8 +19,10 @@
 .oompa-container:hover h4{
     color: #1a99f0;
 }
-
-p {
+.pages-container {
+    padding-bottom: 15px;
+}
+.info-container > p {
     margin: 0px;
     color: grey;
 }
