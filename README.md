@@ -12,14 +12,8 @@ This is the MVP version of the technical test of the Oompa Loompas.
 ## How to use it:
 
 To see the results, do in order:
-
-### `npm i`
-
-Install all necessary dependencies.
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Download the repository and navegate to it's folder.
+* Run "npm i" to install all necessary dependencies.
+* Run "npm start" to see the results at [http://localhost:3000].
 
 
